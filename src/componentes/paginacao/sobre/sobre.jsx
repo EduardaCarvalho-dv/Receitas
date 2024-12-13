@@ -1,8 +1,8 @@
 // import React from 'react'
-
+import "../../../styles/sobre.css";
 const sobre = () => {
   return (
-    <div>sobre</div>
+    <h1>Sobre</h1>
   )
 }
 

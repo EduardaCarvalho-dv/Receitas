@@ -15,6 +15,12 @@ export const navLinks = [
         path: "/contato",
         text: "Contato"
     },
+
+    {
+        id: 4, 
+        path: "/receitas",
+        text: "Receitas"
+   },
 ];
 
 export const categoriaLinks = [
