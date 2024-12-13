@@ -1,7 +1,5 @@
-// import React from "react";
 import Home from "./componentes/paginacao/home/home.jsx";
 import Nav from "./componentes/paginacao/nav/nav.jsx";
-import Header from "./componentes/paginacao/header/header.jsx";
 import Rodape from "./componentes/paginacao/rodape/rodape.jsx";
 import Sobre from "./componentes/paginacao/sobre/sobre.jsx";
 import Contato from "./componentes/paginacao/contato/contato.jsx";
@@ -17,15 +15,14 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Nav />
-        <Header/>
-
+        <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="/receitas" element={<Contato />} />
         </Routes>
-
+        </main>
         <Rodape />
       </BrowserRouter>
     </div>

@@ -18,7 +18,6 @@ export default function nav() {
       <Navbar
         collapseOnSelect
         expand="lg"
-        bg="primary"
         className="bg-body-tertiary"
       >
         <Container>
