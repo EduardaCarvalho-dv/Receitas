@@ -1,0 +1,17 @@
+.custom-navbar{
+    background-color: #aa530d;
+    position: sticky;
+    padding: 20px 10px 20px 10px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.custom-navbar-brand{
+    font-family: monospace;
+    font-size: larger;
+    justify-content: space-between;
+}
+
+.navbar .navLink{
+    padding: 5px 10px 5px 10px;
+}

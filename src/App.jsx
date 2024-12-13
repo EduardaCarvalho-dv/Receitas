@@ -5,7 +5,10 @@ import Header from "./componentes/paginacao/header/header.jsx";
 import Rodape from "./componentes/paginacao/rodape/rodape.jsx";
 import Sobre from "./componentes/paginacao/sobre/sobre.jsx";
 import Contato from "./componentes/paginacao/contato/contato.jsx";
+
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
 function App() {
@@ -23,7 +26,7 @@ function App() {
           <Route path="/receitas" element={<Contato />} />
         </Routes>
 
-        {/* <Rodape /> */}
+        <Rodape />
       </BrowserRouter>
     </div>
       </>

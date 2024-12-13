@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import headerStyle from './../header/header.module.css';
 import {Swiper, SwiperSlide} from "swiper/react";
 

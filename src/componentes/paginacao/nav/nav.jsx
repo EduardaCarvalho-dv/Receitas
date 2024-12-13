@@ -1,27 +1,70 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import navStyle from "./../nav/nav.module.css";
+import { categoriaLinks, navLinks } from "../../../data/linksNavegacao";
+
+import "../../../styles/nav.css";
+
+import {
+  Navbar,
+  Container,
+  Nav,
+  NavDropdown,
+  Form,
+  Button,
+  NavLink,
+} from "react-bootstrap";
 
 export default function nav() {
-return (
-  <div className= {navStyle.nav_organizar}>
-      <div className={navStyle.logo}>
-        <a href="#"><span> Nome pensar </span></a>
-      </div>
-
-        <div className={navStyle.search_bar}>
-          <input type="text" placeholder="Pesquisar" />
-          <button type="button"> 🔍 </button>
-        </div>
-        
-        <ul>
-            <li><Link to= "/"> Home </Link></li>
-            <li><Link to= "/"> Receitas </Link></li>
-            <li><Link to= "/"> Sobre </Link></li>
-            <li><Link to= "/"> Contato </Link></li>
-        </ul>
-
-
-    </div>
+  return (
+    <header>
+      <Navbar
+        collapseOnSelect
+        expand="lg"
+        bg="primary"
+        className="bg-body-tertiary"
+      >
+        <Container>
+          <Navbar.Brand href="/">
+            <h4>RECEITAS</h4>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mx-auto">
+              {navLinks.map((item) => {
+                return (
+                  <div className="navLink" key={item.id}>
+                    <NavLink href={item.path}>{item.text}</NavLink>
+                  </div>
+                );
+              })}
+              <NavDropdown
+                className="navLink"
+                title="Categorias"
+                id="collapsible-nav-dropdown"
+              >
+                {categoriaLinks.map((categoria) => {
+                  return (
+                    <div key={categoria.id}>
+                      <NavDropdown.Item href={categoria.path}>
+                        {categoria.text}
+                      </NavDropdown.Item>
+                    </div>
+                  );
+                })}
+              </NavDropdown>
+            </Nav>
+            <Nav className="md-auto search">
+              <Form className="d-flex">
+                <Form.Control
+                  type="search"
+                  placeholder="Pesquisar"
+                  className="md-3"
+                  aria-label="Search"
+                />
+                <Button variant="outline-success">Buscar</Button>
+              </Form>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </header>
   );
 }
