@@ -1,4 +1,4 @@
-import { categoriaLinks, navLinks } from "../../../data/linksNavegacao";
+import { navLinks } from "../../../data/linksNavegacao";
 
 import "../../../styles/nav.css";
 
@@ -6,8 +6,8 @@ import {
   Navbar,
   Container,
   Nav,
-  NavDropdown,
-  Form,
+  // NavDropdown,
+  // Form,
   Button,
   NavLink,
 } from "react-bootstrap";
@@ -15,11 +15,7 @@ import {
 export default function nav() {
   return (
     <header>
-      <Navbar
-        collapseOnSelect
-        expand="lg"
-        className="bg-body-tertiary"
-      >
+      <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
         <Container>
           <Navbar.Brand href="/">
             <h4>RECEITAS</h4>
@@ -27,6 +23,8 @@ export default function nav() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mx-auto">
+            </Nav>
+            <Nav className="md-auto">
               {navLinks.map((item) => {
                 return (
                   <div className="navLink" key={item.id}>
@@ -34,7 +32,7 @@ export default function nav() {
                   </div>
                 );
               })}
-              <NavDropdown
+              {/* <NavDropdown
                 className="navLink"
                 title="Categorias"
                 id="collapsible-nav-dropdown"
@@ -48,9 +46,10 @@ export default function nav() {
                     </div>
                   );
                 })}
-              </NavDropdown>
+              </NavDropdown> */}
+              <Button variant="outline-success">Buscar</Button>
             </Nav>
-            <Nav className="md-auto search">
+            {/* <Nav className="md-auto search">
               <Form className="d-flex">
                 <Form.Control
                   type="search"
@@ -58,9 +57,8 @@ export default function nav() {
                   className="md-3"
                   aria-label="Search"
                 />
-                <Button variant="outline-success">Buscar</Button>
               </Form>
-            </Nav>
+            </Nav> */}
           </Navbar.Collapse>
         </Container>
       </Navbar>
