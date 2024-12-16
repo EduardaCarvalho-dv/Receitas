@@ -1,0 +1,71 @@
+{
+  "usuarios": [
+    {
+      "id": "6c5c",
+      "nome": "Fernando",
+      "email": "diass.eduardo05@gmail.com",
+      "senha": "123456"
+    }
+  ],
+  "login": [
+    {
+      "id": "9ba7",
+      "email": "diass.eduardo05@gmail.com",
+      "senha": "123456"
+    },
+    {
+      "id": "fe9b",
+      "email": "diass.eduardo05@gmail.com",
+      "senha": "123456"
+    },
+    {
+      "id": "3afa",
+      "email": "diass.eduardo05@gmail.com",
+      "senha": "123456"
+    },
+    {
+      "id": "5207",
+      "email": "diass.eduardo05@gmail.com",
+      "senha": "123456"
+    },
+    {
+      "id": "0605",
+      "email": "diass.eduardo05@gmail.com",
+      "senha": "123456"
+    },
+    {
+      "id": "79e9",
+      "email": "diass.eduardo05@gmail.com",
+      "senha": "123456"
+    },
+    {
+      "id": "2e53",
+      "email": "diass.eduardo05@gmail.com",
+      "senha": "123456"
+    }
+  ],
+  "receitas": [
+    {
+      "id": "1",
+      "nome": "Sopa",
+      "descricao": "Rajfldafjdaf",
+      "imagem": "https://via.placeholder.com/150",
+      "modoDePreparo": "askjfldajfglkdgajddgadgdagad",
+      "ingredientes": [
+        "ajkskdjaskjfasklfjdafa",
+        "ajslfhadfhadklfjhdakfjahdkfhadjfad"
+      ]
+    },
+    {
+      "id": "2",
+      "nome": "Pizza",
+      "descricao": "Rajfldafjdaf",
+      "imagem": "https://via.placeholder.com/150",
+      "modoDePreparo": "askjfldajfglkdgajddgadgdagad",
+      "ingredientes": [
+        "ajkskdjaskjfasklfjdafa",
+        "ajslfhadfhadklfjhdakfjahdkfhadjfad"
+      ]
+    }
+  ]
+}

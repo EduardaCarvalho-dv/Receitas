@@ -1,6 +1,7 @@
 import { navLinks } from "../../../data/linksNavegacao";
 
 import "../../../styles/nav.css";
+import { useNavigate } from "react-router-dom";
 
 import {
   Navbar,
@@ -13,7 +14,9 @@ import {
 } from "react-bootstrap";
 
 export default function nav() {
+  const navigate = useNavigate();
   return (
+    
     <header>
       <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
         <Container>
@@ -47,7 +50,7 @@ export default function nav() {
                   );
                 })}
               </NavDropdown> */}
-              <Button variant="outline-success">Buscar</Button>
+              <Button variant="outline-success" onClick= {() => navigate("/buscar")}>Buscar</Button>
             </Nav>
             {/* <Nav className="md-auto search">
               <Form className="d-flex">

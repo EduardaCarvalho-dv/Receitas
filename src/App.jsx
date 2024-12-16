@@ -4,6 +4,7 @@ import Nav from "./componentes/paginacao/nav/nav.jsx";
 import Rodape from "./componentes/paginacao/rodape/rodape.jsx";
 import Sobre from "./componentes/paginacao/sobre/sobre.jsx";
 import Contato from "./componentes/paginacao/contato/contato.jsx";
+import Buscar from "./componentes/paginacao/buscar/buscar.jsx";
 
 import { Routes, Route, BrowserRouter, useLocation } from "react-router-dom";
 
@@ -25,6 +26,7 @@ function AppPrincipal() {
               <Route path="/sobre" element={<Sobre />} />
               <Route path="/contato" element={<Contato />} />
               <Route path="/receitas" element={<Contato />} />
+              <Route path="/buscar" element={<Buscar />} />
             </Routes>
           </main>
           {!ocultaNav && <Rodape />}
