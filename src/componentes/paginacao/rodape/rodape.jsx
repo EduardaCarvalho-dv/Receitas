@@ -5,13 +5,15 @@ import { CgMail } from "react-icons/cg";
 
 import { Container, Row, Col } from "react-bootstrap";
 
-const rodape = () => {
+import logo from "../../../../public/logo.jpeg";
+
+const Rodape = () => {
   return (
     <footer className="footer">
       <Container>
         <div className="content">
           <div>
-            <h1>R E C E I T A S</h1>
+            <img className="logoInit" src={logo} alt="logo" />
           </div>
           <div className="contatos">
             <p>
@@ -54,7 +56,7 @@ const rodape = () => {
         </div>
         <Row className="copyright">
           <Col>
-            &copy; {new Date().getFullYear()} Site de Receitas. Todos os
+            &copy; {new Date().getFullYear()} Mundo Afora. Todos os
             direitos reservados
           </Col>
         </Row>
@@ -63,4 +65,4 @@ const rodape = () => {
   );
 };
 
-export default rodape;
+export default Rodape;

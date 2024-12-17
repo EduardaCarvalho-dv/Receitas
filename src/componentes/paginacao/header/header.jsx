@@ -15,7 +15,7 @@ import Comida4 from "../../../assets/sopa-paraguaia-tenda.jpg";
 import Comida5 from "../../../assets/sopao.jpg";
 import Comida6 from "../../../assets/torta.jpeg";
 
-export default function header() {
+export default function Header() {
   const imagens = [Comida1, Comida2, Comida3, Comida4, Comida5, Comida6];
 
   return (

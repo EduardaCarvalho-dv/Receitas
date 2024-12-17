@@ -1,10 +1,10 @@
 // import React from 'react'
 
- const categorias = () => {
+ const Categorias = () => {
     return (
       <div><h1> categorias </h1></div>
     )
   }
-  export default categorias
+  export default Categorias;
   
  

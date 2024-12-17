@@ -6,18 +6,18 @@ export const navLinks = [
   },
   {
     id: 2,
-    path: "/receitas",
-    text: "Receitas",
-  },
-  {
-    id: 3,
     path: "/categorias",
     text: "Categorias",
   },
   {
-    id: 4,
+    id: 3,
     path: "/sobre",
     text: "Receitas Favoritas",
+  },
+  {
+    id: 4,
+    path: "/receitas",
+    text: "Adicionar Receita",
   },
   {
     id: 5,

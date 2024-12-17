@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { Container, Form, Button, Card, Row, Col } from "react-bootstrap";
 import "../../../styles/buscaReceitas.css";
 
-const buscar = () => {
+const Buscar = () => {
+
   const [receitas, setReceitas] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [sugestoes, setSugestoes] = useState([]);
@@ -89,4 +90,4 @@ const buscar = () => {
   );
 };
 
-export default buscar;
+export default Buscar;

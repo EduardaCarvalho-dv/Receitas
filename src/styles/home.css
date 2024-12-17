@@ -1,0 +1,112 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.receitaCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+}
+
+.conteudoHome {
+  /* background-color: blueviolet; */
+  width: 75%;
+}
+
+.celebracoes {
+  width: 100%;
+  margin: 4rem auto 10rem auto;
+  text-align: center;
+}
+
+/*cima direita baixo esquerda*/
+
+.celebracoes h2, .emAlta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  padding: 1.5em;
+}
+
+.imgReceita {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.slick-slide > div {
+  margin: 0 45px;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  color: #000;
+}
+
+/**/
+
+.emAlta {
+    width: 100%;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cardAlta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 1rem;
+}
+  
+.info {
+    flex: 1;
+    padding: 1rem;
+}
+  
+  .receitaTitulo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .receitaDescricao {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  .botaoReceita {
+    margin-top: 1rem;
+  }
+  
+  .btnReceita {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-right: 1rem;
+  }
+  
+  .receitaImagem {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.receitaImagem img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+  

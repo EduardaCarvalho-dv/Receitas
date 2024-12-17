@@ -1,9 +1,9 @@
 // import React from 'react'
 import "../../../styles/sobre.css";
-const sobre = () => {
+const Sobre = () => {
   return (
     <h1>Sobre</h1>
   )
 }
 
-export default sobre
+export default Sobre;

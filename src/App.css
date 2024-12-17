@@ -1,3 +1,19 @@
 main{
     min-height: 100vh;
   }
+
+body{
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: #4f4949;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #d67214;
+}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 //import {fakeBack} from "../../../data/fakeBack.js";
 import { useNavigate } from "react-router-dom";
 import axios from "axios"; 
@@ -13,7 +13,7 @@ import {
   } from "react-bootstrap";
 import "../../../styles/cadastroUsuario.css";
 
-const cadastroUsuario = () => {
+const CadastroUsuario = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
     nome: "",
@@ -145,4 +145,4 @@ const cadastroUsuario = () => {
   );
 };
 
-export default cadastroUsuario;
+export default CadastroUsuario;
