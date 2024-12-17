@@ -1,5 +1,7 @@
 import img1 from "../assets/torta.jpeg";
+
 import alta1 from "../assets/galinhada.jpg";
+import alta2 from "../assets/sopao.jpg";
 
 export const celebracoes = [
   {
@@ -39,7 +41,7 @@ export const celebracoes = [
   },
 ];
 
-export const emAlta = [
+export const receitasEmAlta = [
   {
     id: 1,
     img: alta1,
@@ -47,22 +49,25 @@ export const emAlta = [
     descricao:
       "O evento foi aqui em São Paulo, mas ela mora no interior e não pôde vir, então eu marquei presença por ela e levei comigo outra amiga, a Niq.",
   },
-  /*    {
-        id: 2,
-        img: alta1,
-        title: "lorem ipsum",
-        descricao: "O evento foi aqui em São Paulo, mas ela mora no interior e não pôde vir, então eu marquei presença por ela e levei comigo outra amiga, a Niq."
-    },
-    {
-        id: 3,
-        img: alta1,
-        title: "lorem ipsum",
-        descricao: "O evento foi aqui em São Paulo, mas ela mora no interior e não pôde vir, então eu marquei presença por ela e levei comigo outra amiga, a Niq."
-    },
-    {
-        id: 4,
-        img: alta1,
-        title: "lorem ipsum",
-        descricao: "O evento foi aqui em São Paulo, mas ela mora no interior e não pôde vir, então eu marquei presença por ela e levei comigo outra amiga, a Niq."
-    }, */
+  {
+    id: 2,
+    img: alta2,
+    title: "lorem ipsum",
+    descricao:
+      "O evento foi aqui em São Paulo, mas ela mora no interior e não pôde vir, então eu marquei presença por ela e levei comigo outra amiga, a Niq.",
+  },
+  {
+    id: 3,
+    img: alta1,
+    title: "lorem ipsum",
+    descricao:
+      "O evento foi aqui em São Paulo, mas ela mora no interior e não pôde vir, então eu marquei presença por ela e levei comigo outra amiga, a Niq.",
+  },
+  {
+    id: 4,
+    img: alta2,
+    title: "lorem ipsum",
+    descricao:
+      "O evento foi aqui em São Paulo, mas ela mora no interior e não pôde vir, então eu marquei presença por ela e levei comigo outra amiga, a Niq.",
+  },
 ];

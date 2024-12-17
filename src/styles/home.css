@@ -12,7 +12,6 @@
 }
 
 .conteudoHome {
-  /* background-color: blueviolet; */
   width: 75%;
 }
 
@@ -24,7 +23,8 @@
 
 /*cima direita baixo esquerda*/
 
-.celebracoes h2, .emAlta h2 {
+.celebracoes h2,
+.emAlta h2 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   font-weight: bold;
@@ -49,64 +49,72 @@
 /**/
 
 .emAlta {
-    width: 100%;
-    margin: 3rem auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .cardAlta {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    margin: 1rem;
+  width: 100%;
+  margin: 3rem auto;
+  text-align: center;
 }
-  
+
 .info {
-    flex: 1;
-    padding: 1rem;
+  display: flex;
+  padding: 1.5rem;
+  width: 66vw;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 1rem;
 }
-  
-  .receitaTitulo {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  .receitaDescricao {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 1rem;
-  }
-  
-  .botaoReceita {
-    margin-top: 1rem;
-  }
-  
-  .btnReceita {
-    background-color: #000;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    margin-right: 1rem;
-  }
-  
-  .receitaImagem {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.receitaTitulo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem 0;
 }
-  
+
+.receitaDescricao {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.botaoReceita {
+  margin-top: 1rem;
+}
+
+.btnReceita {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  margin: auto 0.5rem;
+  padding: 0.5rem 4.8rem;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.btnReceita:hover {
+  background-color: #a45920;
+  transition: 0.3s ease;
+  transform: scale(1.05);
+}
+
+.receitaImagem {
+  display: flex;
+}
+
+.cont-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+  float: left;
+  margin: 1.5rem 1rem 1.5rem auto;
+}
+
 .receitaImagem img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  float: right;
 }
-  
