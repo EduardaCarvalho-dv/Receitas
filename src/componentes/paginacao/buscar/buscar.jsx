@@ -11,15 +11,16 @@ const buscar = () => {
   useEffect(() => {
     const fetchReceitas = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/receitas");
-        setReceitas(response.data);
-        setSugestoes(response.data.slice(0, 3));
+        const response = await axios.get("/db.json"); 
+        setReceitas(response.data.receitas);
+        setSugestoes(response.data.receitas.slice(0, 3));
       } catch (error) {
         console.error("Erro ao carregar receitas:", error);
       }
     };
     fetchReceitas();
   }, []);
+
   const filteredReceitas = receitas.filter((receita) =>
     receita.nome.toLowerCase().includes(searchTerm.toLowerCase())
   );

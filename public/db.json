@@ -1,0 +1,26 @@
+{
+  "receitas": [
+    {
+      "id": "1",
+      "nome": "Sopa",
+      "descricao": "Rajfldafjdaf",
+      "imagem": "https://via.placeholder.com/150",
+      "modoDePreparo": "askjfldajfglkdgajddgadgdagad",
+      "ingredientes": [
+        "ajkskdjaskjfasklfjdafa",
+        "ajslfhadfhadklfjhdakfjahdkfhadjfad"
+      ]
+    },
+    {
+      "id": "2",
+      "nome": "Pizza",
+      "descricao": "Rajfldafjdaf",
+      "imagem": "https://via.placeholder.com/150",
+      "modoDePreparo": "askjfldajfglkdgajddgadgdagad",
+      "ingredientes": [
+        "ajkskdjaskjfasklfjdafa",
+        "ajslfhadfhadklfjhdakfjahdkfhadjfad"
+      ]
+    }
+  ]
+}

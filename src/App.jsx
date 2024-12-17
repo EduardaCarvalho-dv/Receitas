@@ -11,36 +11,27 @@ import { Routes, Route, BrowserRouter, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-function AppPrincipal() {
-  const location = useLocation();
-  const ocultaNav = location.pathname === "/";
+function App() {
+
 
   return (
     <>
-      <div className="App">
-         {!ocultaNav && <Nav/>}
-          <main>
-            <Routes>
-              <Route path="/" element={<CadastroUsuario/>}/>
-              <Route path="/home" element={<Home />} />
-              <Route path="/sobre" element={<Sobre />} />
-              <Route path="/contato" element={<Contato />} />
-              <Route path="/receitas" element={<Contato />} />
-              <Route path="/buscar" element={<Buscar />} />
-            </Routes>
-          </main>
-          {!ocultaNav && <Rodape />}
-      </div>
+       <div className="App">
+      <BrowserRouter>
+        <Nav />
+        <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/sobre" element={<Sobre />} />
+          <Route path="/contato" element={<Contato />} />
+          <Route path="/receitas" element={<Contato />} />
+          <Route path="/buscar" element={<Buscar />} />
+        </Routes>
+        </main>
+        <Rodape />
+      </BrowserRouter>
+    </div>
     </>
   );
 }
-
-function App() {
-  return (
-    <BrowserRouter>
-      <AppPrincipal />
-    </BrowserRouter>
-  );
-}
-
-export default App;
+ export default App; 
