@@ -35,7 +35,7 @@ const BarraNavegacao = () => {
                 );
               })}
               <Button
-                variant="outline-success"
+                variant="dark"
                 onClick={() => navigate("/buscar")}
               >
                 Buscar

@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -8,15 +8,13 @@ import "swiper/css/navigation";
 
 import "../../../styles/header.css";
 
-import Comida1 from "../../../assets/asado.jpg";
-import Comida2 from "../../../assets/chipa.jpg";
 import Comida3 from "../../../assets/galinhada.jpg";
 import Comida4 from "../../../assets/sopa-paraguaia-tenda.jpg";
 import Comida5 from "../../../assets/sopao.jpg";
 import Comida6 from "../../../assets/torta.jpeg";
 
 export default function Header() {
-  const imagens = [Comida1, Comida2, Comida3, Comida4, Comida5, Comida6];
+  const imagens = [Comida3, Comida4, Comida5, Comida6];
 
   return (
     <>
@@ -26,7 +24,11 @@ export default function Header() {
         loop={true}
         pagination={{ clickable: true }}
         navigation={true}
-        modules={[Pagination, Navigation]}
+        autoplay={{ 
+          delay: 10000,
+          disableOnInteraction: false
+        }}
+        modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
         {imagens.map((item) => {

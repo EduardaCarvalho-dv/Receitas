@@ -1,4 +1,4 @@
-import CadastroUsuario from "./componentes/paginacao/cadastroUsuario/cadastroUsuario.jsx";
+// import CadastroUsuario from "./componentes/paginacao/cadastroUsuario/cadastroUsuario.jsx";
 import Home from "./componentes/paginacao/home/home.jsx";
 import Nav from "./componentes/paginacao/navbar/BarraNavegacao.jsx";
 import Rodape from "./componentes/paginacao/rodape/rodape.jsx";
