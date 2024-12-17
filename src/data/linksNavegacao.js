@@ -6,8 +6,8 @@ export const navLinks = [
   },
   {
     id: 2,
-    path: "/categorias",
-    text: "Categorias",
+    path: "/receitas",
+    text: "Receitas",
   },
   {
     id: 3,
@@ -16,11 +16,6 @@ export const navLinks = [
   },
   {
     id: 4,
-    path: "/receitas",
-    text: "Adicionar Receita",
-  },
-  {
-    id: 5,
     path: "/sobre",
     text: "Sobre",
   },

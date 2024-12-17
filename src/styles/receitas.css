@@ -1,0 +1,14 @@
+.receita-hero {
+    background-image: url("https://via.placeholder.com/1200x400");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 100px 0;
+    color: white;
+  }
+  
+  .filtro-receita {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
