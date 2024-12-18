@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Header from "../header/Header";
+import Header from "../header/Header.jsx";
 import Card from "react-bootstrap/Card";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
