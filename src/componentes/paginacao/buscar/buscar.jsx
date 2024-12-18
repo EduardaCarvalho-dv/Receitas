@@ -2,24 +2,27 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Container, Form, Button, Card, Row, Col } from "react-bootstrap";
 import "../../../styles/buscaReceitas.css";
+import { fetchAndMergeReceitas } from "../../../utils/syncReceitas"; 
 
 const Buscar = () => {
-
   const [receitas, setReceitas] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [sugestoes, setSugestoes] = useState([]);
 
   useEffect(() => {
-    const fetchReceitas = async () => {
+    const carregarReceitas = async () => {
       try {
-        const response = await axios.get("/db.json"); 
-        setReceitas(response.data.receitas);
-        setSugestoes(response.data.receitas.slice(0, 3));
+
+        const receitasUnificadas = await fetchAndMergeReceitas();
+        setReceitas(receitasUnificadas);
+        
+        setSugestoes(receitasUnificadas.slice(0, 3));
       } catch (error) {
         console.error("Erro ao carregar receitas:", error);
       }
     };
-    fetchReceitas();
+
+    carregarReceitas();
   }, []);
 
   const filteredReceitas = receitas.filter((receita) =>

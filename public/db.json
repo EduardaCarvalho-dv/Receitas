@@ -5,11 +5,30 @@
       "id": "1",
       "nome": "Sopa",
       "descricao": "Deliciosa sopa caseira.",
-      "imagem": "https://via.placeholder.com/150",
+      "imagem": "https://cptstatic.s3.amazonaws.com/imagens/enviadas/materias/materia27698/culinaria-mineira-cpt.jpg",
       "categoria": "Sopas",
       "modoDePreparo": "Ferva os ingredientes.",
       "ingredientes": ["Água", "Legumes"]
+    },
+    {
+      "id": "2",
+      "nome": "Spaghetti à Bolonhesa",
+      "descricao": "Macarrão com molho à base de carne moída.",
+      "imagem": "teste",
+      "video": "teste",
+      "categoria": "Massas",
+      "modoDePreparo": "Cozinhe o macarrão e prepare o molho à parte.",
+      "ingredientes": ["Macarrão", "Carne moída", "Molho de tomate", "Queijo"]
+    },
+    {
+      "id": "3",
+      "nome": "Bolo de Chocolate",
+      "descricao": "Bolo fofinho de chocolate com cobertura cremosa.",
+      "imagem": "https://teste",
+      "video": "https://teste",
+      "categoria": "Doces",
+      "modoDePreparo": "Misture os ingredientes e asse.",
+      "ingredientes": ["Farinha", "Ovos", "Chocolate", "Açúcar"]
     }
   ]
-  
 }

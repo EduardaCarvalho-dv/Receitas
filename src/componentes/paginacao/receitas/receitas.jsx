@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import AddReceita from "./addReceita";
 import "../../../styles/receitas.css";
+import { fetchAndMergeReceitas } from "../../../utils/syncReceitas";
+import axios from "axios";
 
 const Receitas = () => {
   const [receitas, setReceitas] = useState([]);
@@ -20,30 +21,19 @@ const Receitas = () => {
   });
 
   useEffect(() => {
-    const fetchData = async () => {
+    const carregarDados = async () => {
       try {
-
-        const localReceitas =
-          JSON.parse(localStorage.getItem("receitas")) || [];
+        const receitasUnificadas = await fetchAndMergeReceitas();
+        setReceitas(receitasUnificadas);
 
         const response = await axios.get("/db.json");
-        const receitasFixas = response.data.receitas;
-
-        const receitasUnificadas = [
-          ...receitasFixas,
-          ...localReceitas.filter(
-            (local) => !receitasFixas.some((fixa) => fixa.id === local.id)
-          ),
-        ];
-
-        setReceitas(receitasUnificadas);
         setCategorias(["Todas", ...response.data.categorias]);
       } catch (error) {
-        console.error("Erro ao buscar receitas:", error);
+        console.error("Erro ao carregar dados:", error);
       }
     };
 
-    fetchData();
+    carregarDados();
   }, []);
 
   const handleShowModal = () => setShowModal(true);
@@ -56,27 +46,21 @@ const Receitas = () => {
       !novaReceita.descricao ||
       !novaReceita.modoDePreparo ||
       !novaReceita.categoria ||
-      novaReceita.ingredientes.some(ingrediente => !ingrediente.trim())
+      novaReceita.ingredientes.some((ingrediente) => !ingrediente.trim())
     ) {
       alert("Todos os campos são obrigatórios e deve haver pelo menos um ingrediente.");
       return;
     }
-  
-    if (novaReceita.ingredientes.length === 0 || novaReceita.ingredientes.every(ingrediente => !ingrediente.trim())) {
-      alert("A receita deve ter pelo menos um ingrediente.");
-      return;
-    }
-  
+
     const novaReceitaComID = { id: Date.now().toString(), ...novaReceita };
-    const novaLista = [...receitas, novaReceitaComID];
-    const receitasDinamicas = novaLista.filter(
-      (receita) => !receitas.some((fixa) => fixa.id === receita.id)
-    );
-  
-    localStorage.setItem("receitas", JSON.stringify(receitasDinamicas));
-    setReceitas(novaLista);
+    const novaListaReceitas = [...receitas, novaReceitaComID];
+    const receitasSalvas = JSON.parse(localStorage.getItem("receitas")) || [];
+    const todasReceitas = [...receitasSalvas, novaReceitaComID];
+
+    localStorage.setItem("receitas", JSON.stringify(todasReceitas));
+
+    setReceitas(novaListaReceitas);
     setShowModal(false);
-  
     setNovaReceita({
       nome: "",
       imagem: "",
@@ -86,20 +70,27 @@ const Receitas = () => {
       descricao: "",
     });
   };
-  
+
+  const removerReceita = (id) => {
+    const receitasSalvas = JSON.parse(localStorage.getItem("receitas")) || [];
+    const novasReceitas = receitasSalvas.filter((receita) => receita.id !== id);
+
+    localStorage.setItem("receitas", JSON.stringify(novasReceitas));
+
+    const receitasAtualizadas = receitas.filter((receita) => receita.id !== id);
+    setReceitas(receitasAtualizadas);
+  };
 
   const receitasFiltradas =
     categoriaSelecionada === "Todas"
       ? receitas
-      : receitas.filter(
-          (receita) => receita.categoria === categoriaSelecionada
-        );
+      : receitas.filter((receita) => receita.categoria === categoriaSelecionada);
 
   return (
     <Container>
       <div className="receita-hero">
         <h1 className="text-white">Receitas</h1>
-        <p className="text-white">Descubra as delicias paraguais!</p>
+        <p className="text-white">Descubra as delicias paraguaias!</p>
         <Button variant="light" onClick={handleShowModal}>
           + Adicionar Receita
         </Button>
@@ -126,7 +117,13 @@ const Receitas = () => {
               <Card.Body>
                 <Card.Title>{receita.nome}</Card.Title>
                 <Card.Text>{receita.descricao}</Card.Text>
-                <Button variant="dark">Ver Receita</Button>
+                <Button
+                  variant="danger"
+                  onClick={() => removerReceita(receita.id)}
+                  disabled={receita.id < 1000} 
+                >
+                  Remover
+                </Button>
               </Card.Body>
             </Card>
           </Col>
