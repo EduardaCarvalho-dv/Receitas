@@ -4,6 +4,7 @@ import AddReceita from "./addReceita";
 import "../../../styles/receitas.css";
 import { fetchAndMergeReceitas } from "../../../utils/syncReceitas";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Receitas = () => {
   const [receitas, setReceitas] = useState([]);
@@ -75,12 +76,14 @@ const Receitas = () => {
 
   const removerReceita = (id) => {
     const receitasSalvas = JSON.parse(localStorage.getItem("receitas")) || [];
-    const novasReceitas = receitasSalvas.filter((receita) => receita.id !== id);
-
-    localStorage.setItem("receitas", JSON.stringify(novasReceitas));
-
-    const receitasAtualizadas = receitas.filter((receita) => receita.id !== id);
-    setReceitas(receitasAtualizadas);
+    
+    if (receitasSalvas.some((receita) => receita.id === id)) {
+      const novasReceitas = receitasSalvas.filter((receita) => receita.id !== id);
+      localStorage.setItem("receitas", JSON.stringify(novasReceitas));
+      
+      const receitasAtualizadas = receitas.filter((receita) => receita.id !== id);
+      setReceitas(receitasAtualizadas);
+    }
   };
 
   const receitasFiltradas =
@@ -90,13 +93,9 @@ const Receitas = () => {
           (receita) => receita.categoria === categoriaSelecionada
         );
 
-  const handleViewReceita = (id) => {
-    console.log(`Ver receita com ID: ${id}`);
-  };
-
   return (
     <Container>
-      <div className="receita-hero">
+      <div className="receita-heros">
         <h1 className="text-white">Recetas</h1>
         <p className="text-white">¡Descubre las delicias paraguayas!</p>
         <Button variant="light" onClick={handleShowModal}>
@@ -126,16 +125,19 @@ const Receitas = () => {
                 <Card.Title>{receita.nome}</Card.Title>
                 <Card.Text>{receita.descricao}</Card.Text>
                 <div className="button-container">
-                  <Button
-                    variant="danger"
-                    onClick={() => removerReceita(receita.id)}
-                    disabled={receita.id < 1000}
-                  >
-                    Eliminar
-                  </Button>
+                  {JSON.parse(localStorage.getItem("receitas"))?.some(r => r.id === receita.id) && (
+                    <Button
+                      variant="danger"
+                      onClick={() => removerReceita(receita.id)}
+                    >
+                      Eliminar
+                    </Button>
+                  )}
                   <Button
                     variant="dark"
-                    onClick={() => handleViewReceita(receita.id)}
+                    as={Link} 
+                    to={`/receitas/${receita.id}`} 
+                    aria-label={`Ver receita ${receita.nome}`}
                   >
                     Ver Receta
                   </Button>

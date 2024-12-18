@@ -1,19 +1,31 @@
-import React from 'react';
-import { Modal, Form, Button } from 'react-bootstrap';
+import React from "react";
+import { Modal, Form, Button } from "react-bootstrap";
 
-const AddReceita = ({ showModal, handleCloseModal, novaReceita, setNovaReceita, categorias, adicionarReceita }) => {
+const AddReceita = ({
+  showModal,
+  handleCloseModal,
+  novaReceita,
+  setNovaReceita,
+  categorias,
+  adicionarReceita,
+}) => {
   const handleFormChange = (e) => {
     const { name, value } = e.target;
     setNovaReceita({ ...novaReceita, [name]: value });
   };
 
   const handleAddIngredient = () => {
-    setNovaReceita({ ...novaReceita, ingredientes: [...novaReceita.ingredientes, ""] });
+    setNovaReceita({
+      ...novaReceita,
+      ingredientes: [...novaReceita.ingredientes, ""],
+    });
   };
 
   const handleRemoveIngredient = (index) => {
     if (novaReceita.ingredientes.length > 1) {
-      const ingredientesAtualizados = novaReceita.ingredientes.filter((_, i) => i !== index);
+      const ingredientesAtualizados = novaReceita.ingredientes.filter(
+        (_, i) => i !== index
+      );
       setNovaReceita({ ...novaReceita, ingredientes: ingredientesAtualizados });
     }
   };
@@ -27,12 +39,12 @@ const AddReceita = ({ showModal, handleCloseModal, novaReceita, setNovaReceita, 
   return (
     <Modal show={showModal} onHide={handleCloseModal} centered>
       <Modal.Header closeButton>
-        <Modal.Title>Adicionar Nova Receita</Modal.Title>
+        <Modal.Title>Agregar Receta</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
           <Form.Group>
-            <Form.Label>Nome da Receita</Form.Label>
+            <Form.Label>Nombre de la Receta</Form.Label>
             <Form.Control
               type="text"
               name="nome"
@@ -41,12 +53,12 @@ const AddReceita = ({ showModal, handleCloseModal, novaReceita, setNovaReceita, 
               isInvalid={!novaReceita.nome}
             />
             <Form.Control.Feedback type="invalid">
-              Este campo é obrigatório.
+              Este campo es obligatorio.
             </Form.Control.Feedback>
           </Form.Group>
 
           <Form.Group>
-            <Form.Label>Categoria</Form.Label>
+            <Form.Label>Categoría</Form.Label>
             <Form.Control
               as="select"
               name="categoria"
@@ -61,12 +73,12 @@ const AddReceita = ({ showModal, handleCloseModal, novaReceita, setNovaReceita, 
               ))}
             </Form.Control>
             <Form.Control.Feedback type="invalid">
-              Este campo é obrigatório.
+              Este campo es obligatorio.
             </Form.Control.Feedback>
           </Form.Group>
 
           <Form.Group>
-            <Form.Label>Descrição</Form.Label>
+            <Form.Label>Descripción</Form.Label>
             <Form.Control
               type="text"
               name="descricao"
@@ -75,7 +87,7 @@ const AddReceita = ({ showModal, handleCloseModal, novaReceita, setNovaReceita, 
               isInvalid={!novaReceita.descricao}
             />
             <Form.Control.Feedback type="invalid">
-              Este campo é obrigatório.
+              Este campo es obligatorio.
             </Form.Control.Feedback>
           </Form.Group>
 
@@ -86,7 +98,9 @@ const AddReceita = ({ showModal, handleCloseModal, novaReceita, setNovaReceita, 
                 <Form.Control
                   type="text"
                   value={ingrediente}
-                  onChange={(e) => handleIngredientChange(index, e.target.value)}
+                  onChange={(e) =>
+                    handleIngredientChange(index, e.target.value)
+                  }
                   isInvalid={!ingrediente.trim()}
                 />
                 {novaReceita.ingredientes.length > 1 && (
@@ -101,15 +115,15 @@ const AddReceita = ({ showModal, handleCloseModal, novaReceita, setNovaReceita, 
               </div>
             ))}
             <Button variant="success" onClick={handleAddIngredient}>
-              + Adicionar Ingrediente
+              + Agregar ingrediente
             </Button>
             <Form.Control.Feedback type="invalid">
-              Pelo menos um ingrediente é obrigatório.
+              Al menos un ingrediente es obligatorio.
             </Form.Control.Feedback>
           </Form.Group>
 
           <Form.Group>
-            <Form.Label>Modo de Preparo</Form.Label>
+            <Form.Label>Método de preparación</Form.Label>
             <Form.Control
               as="textarea"
               rows={3}
@@ -119,7 +133,7 @@ const AddReceita = ({ showModal, handleCloseModal, novaReceita, setNovaReceita, 
               isInvalid={!novaReceita.modoDePreparo}
             />
             <Form.Control.Feedback type="invalid">
-              Este campo é obrigatório.
+              Este campo es obligatorio.
             </Form.Control.Feedback>
           </Form.Group>
 
@@ -133,11 +147,10 @@ const AddReceita = ({ showModal, handleCloseModal, novaReceita, setNovaReceita, 
               isInvalid={!novaReceita.imagem}
             />
             <Form.Control.Feedback type="invalid">
-              Este campo é obrigatório.
+              Este campo es obligatorio.
             </Form.Control.Feedback>
           </Form.Group>
 
-        
           <Form.Group>
             <Form.Label>Vídeo (URL - opcional)</Form.Label>
             <Form.Control
@@ -147,17 +160,18 @@ const AddReceita = ({ showModal, handleCloseModal, novaReceita, setNovaReceita, 
               onChange={handleFormChange}
             />
             <Form.Text className="text-muted">
-              Insira o link do vídeo (por exemplo, do YouTube). Este campo é opcional.
+              Haga clic en el enlace del vídeo (por ejemplo, a YouTube). Este
+              campo es opcional.
             </Form.Text>
           </Form.Group>
         </Form>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleCloseModal}>
-          Fechar
+          Cerrar
         </Button>
         <Button variant="dark" onClick={adicionarReceita}>
-          Salvar Receita
+          Guardar receta
         </Button>
       </Modal.Footer>
     </Modal>

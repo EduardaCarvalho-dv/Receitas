@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "../../../styles/home.css";
 import { celebracoes } from "../../../data/cardsReceitas"; 
 import axios from "axios";
+import { Link } from "react-router-dom"; 
 
 const Home = () => {
   const [receitasEmAlta, setReceitasEmAlta] = useState([]);
@@ -45,7 +46,6 @@ const Home = () => {
   };
 
   useEffect(() => {
-   
     const carregarReceitasFixas = async () => {
       try {
         const response = await axios.get("/db.json");
@@ -59,7 +59,6 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-   
     const receitasSalvas = JSON.parse(localStorage.getItem("receitas")) || [];
     if (receitasFixas.length > 0) {
       setReceitasEmAlta([...receitasSalvas, ...receitasFixas].slice(0, 5)); 
@@ -82,7 +81,9 @@ const Home = () => {
                       <h3 className="receitaTitulo">{item.nome}</h3>
                       <p className="receitaDescricao">{item.descricao}</p>
                       <div className="botaoReceita">
-                        <button className="btnReceita">DESCUBRE MÁS</button>
+                        <Link to={`/receitas/${item.id}`} className="btnReceita" aria-label={`Ver receita ${item.nome}`}>
+                          DESCUBRE MÁS
+                        </Link>
                       </div>
                     </div>
                     <div className="receitaImagem">

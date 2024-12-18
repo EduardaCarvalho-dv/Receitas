@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Container, Form, Button, Card, Row, Col } from "react-bootstrap";
 import "../../../styles/buscaReceitas.css";
-import { fetchAndMergeReceitas } from "../../../utils/syncReceitas"; 
-
+import { fetchAndMergeReceitas } from "../../../utils/syncReceitas";
+import { Link } from "react-router-dom";
 const Buscar = () => {
   const [receitas, setReceitas] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -12,10 +12,9 @@ const Buscar = () => {
   useEffect(() => {
     const carregarReceitas = async () => {
       try {
-
         const receitasUnificadas = await fetchAndMergeReceitas();
         setReceitas(receitasUnificadas);
-        
+
         setSugestoes(receitasUnificadas.slice(0, 3));
       } catch (error) {
         console.error("Erro ao carregar receitas:", error);
@@ -58,7 +57,14 @@ const Buscar = () => {
                 <Card.Body>
                   <Card.Title>{receita.nome}</Card.Title>
                   <Card.Text>{receita.descricao}</Card.Text>
-                  <Button variant="dark">Ver Receta</Button>
+                  <Button
+                    variant="dark"
+                    as={Link} 
+                    to={`/receitas/${receita.id}`} 
+                    aria-label={`Ver receita ${receita.nome}`}
+                  >
+                    Ver Receta
+                  </Button>
                 </Card.Body>
               </Card>
             </Col>
@@ -79,8 +85,7 @@ const Buscar = () => {
                 />
                 <Card.Body>
                   <Card.Title>{receita.nome}</Card.Title>
-                  <Button variant="outline-dark">
-                  Ver más</Button>
+                  <Button variant="outline-dark">Ver más</Button>
                 </Card.Body>
               </Card>
             </Col>
