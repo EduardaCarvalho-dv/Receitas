@@ -14,22 +14,24 @@ const Sobre = () => {
       <div className="content">
         <h2>Nuestra Misión</h2>
         <p>
-          Este sitio está dedicado a compartir recetas deliciosas de la cocina paraguaya y de otras partes del mundo. Aquí encontrarás una amplia variedad de recetas, desde platos tradicionales hasta innovaciones modernas, todas cuidadosamente seleccionadas para inspirar tus habilidades culinarias.
+          Este sitio está dedicado a compartir recetas deliciosas de la cocina paraguaya y de otras partes del mundo. Aquí encontrarás uma ampla variedade de receitas, desde pratos tradicionais até inovações modernas, todas cuidadosamente selecionadas para inspirar suas habilidades culinárias.
         </p>
         <h2>¿Por Qué Cocinar?</h2>
         <p>
           Nuestro objetivo es hacer que la cocina sea accesible y divertida para todos. Creemos que cocinar es una forma de arte y una manera de conectar con amigos y familiares. Esperamos que disfrutes explorando nuestras recetas tanto como nosotros disfrutamos creándolas.
         </p>
-        <h2>Descarga Nuestro Folleto</h2>
+        <h2>Visualiza Nuestro Folleto</h2>
         <p>
-          Si deseas obtener más información sobre nuestras recetas, puedes descargar nuestro folleto o visualizarlo en línea haciendo clic en los botones a continuación:
+          Si deseas obtener más información sobre nuestras recetas, puedes visualizar nuestro folleto haciendo clic en el botón a continuación:
         </p>
       </div>
         <div className="button-container">
-          <a href="/path/to/your/folder.pdf" className="download-link" target="_blank" rel="noopener noreferrer">
-            Descargar Folleto
-          </a>
-          <a href="/path/to/your/folder.pdf" className="view-link" target="_blank" rel="noopener noreferrer">
+          <a 
+            href="https://www.canva.com/design/DAGZiuARy6M/L5GT-iyFGdRl69erZdcg0g/edit" 
+            className="view-link" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
             Ver Folleto
           </a>
         </div>
