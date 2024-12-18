@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { Container, Form, Button, Card, Row, Col } from "react-bootstrap";
 import "../../../styles/buscaReceitas.css";
 import { fetchAndMergeReceitas } from "../../../utils/syncReceitas"; 

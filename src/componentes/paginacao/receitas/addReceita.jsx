@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Modal, Form, Button } from 'react-bootstrap';
 
 const AddReceita = ({ showModal, handleCloseModal, novaReceita, setNovaReceita, categorias, adicionarReceita }) => {
