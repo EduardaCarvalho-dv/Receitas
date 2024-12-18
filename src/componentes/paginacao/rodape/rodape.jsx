@@ -17,7 +17,7 @@ const Rodape = () => {
           </div>
           <div className="contatos">
             <p>
-              <span>Contato: </span> (84) 99999-9999&nbsp; <FaWhatsapp />
+              <span>Contacto: </span> (84) 99999-9999&nbsp; <FaWhatsapp />
             </p>
             <p>
               <span>Email: </span>
@@ -56,8 +56,8 @@ const Rodape = () => {
         </div>
         <Row className="copyright">
           <Col>
-            &copy; {new Date().getFullYear()} Mundo Afora. Todos os
-            direitos reservados
+            &copy; {new Date().getFullYear()} Mundo alrededor. Todo
+            derechos reservados
           </Col>
         </Row>
       </Container>

@@ -8,7 +8,7 @@ import axios from "axios";
 const Receitas = () => {
   const [receitas, setReceitas] = useState([]);
   const [categorias, setCategorias] = useState([]);
-  const [categoriaSelecionada, setCategoriaSelecionada] = useState("Todas");
+  const [categoriaSelecionada, setCategoriaSelecionada] = useState("Todo");
   const [showModal, setShowModal] = useState(false);
 
   const [novaReceita, setNovaReceita] = useState({
@@ -27,7 +27,7 @@ const Receitas = () => {
         setReceitas(receitasUnificadas);
 
         const response = await axios.get("/db.json");
-        setCategorias(["Todas", ...response.data.categorias]);
+        setCategorias(["Todo", ...response.data.categorias]);
       } catch (error) {
         console.error("Erro ao carregar dados:", error);
       }
@@ -84,7 +84,7 @@ const Receitas = () => {
   };
 
   const receitasFiltradas =
-    categoriaSelecionada === "Todas"
+    categoriaSelecionada === "Todo"
       ? receitas
       : receitas.filter(
           (receita) => receita.categoria === categoriaSelecionada
