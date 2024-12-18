@@ -87,7 +87,7 @@ const Home = () => {
                       </div>
                     </div>
                     <div className="receitaImagem">
-                      <img src={item.imagem} alt={item.nome} />
+                      <img className="padraoImg" src={item.imagem} alt={item.nome} />
                     </div>
                   </div>
                 </div>

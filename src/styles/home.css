@@ -32,7 +32,10 @@
 }
 
 .imgReceita {
-  height: 200px;
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
 }
@@ -91,6 +94,7 @@
   padding: 0.5rem 4.8rem;
   cursor: pointer;
   border-radius: 20px;
+  text-decoration: none;
 }
 
 .btnReceita:hover {
@@ -117,4 +121,11 @@
   height: auto;
   object-fit: cover;
   float: right;
+}
+
+.padraoImg{
+  max-width: 700px;
+  max-height: 700px;
+  width: auto;
+  height: auto;
 }

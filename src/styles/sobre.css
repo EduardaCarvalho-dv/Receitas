@@ -44,7 +44,7 @@
 .view-link {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff; 
+    background-color: #000; 
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -52,5 +52,12 @@
 
 .download-link:hover,
 .view-link:hover {
-    background-color: #0056b3; 
+    background-color: #454141; 
+}
+
+.centralizador-bt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem;
 }

@@ -5,7 +5,7 @@ import { CgMail } from "react-icons/cg";
 
 import { Container, Row, Col } from "react-bootstrap";
 
-import logo from "../../../../public/logo.jpeg";
+import logo from "../../../../public/logoR.png";
 
 const Rodape = () => {
   return (

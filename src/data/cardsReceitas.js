@@ -2,7 +2,6 @@ import img1 from "../assets/dia-da-cruz-festas-tipicas-paraguai.jpg";
 import img2 from "../assets/san-pedro-san-pablo-festas-tipicas-paraguai.jpg";
 import img3 from "../assets/dia-de-san-blas-festas-tipicas-paraguai.jpg";
 import img4 from "../assets/festa-junina.jpg";
-import img5 from "../assets/download.jpeg";
 
 import alta1 from "../assets/galinhada.jpg";
 import alta2 from "../assets/sopao.jpg";
@@ -27,11 +26,6 @@ export const celebracoes = [
     id: 4,
     img: img4,
     title: "San Juan",
-  },
-  {
-    id: 5,
-    img: img5,
-    title: "Carnaval Encarnacion",
   },
 ];
 
