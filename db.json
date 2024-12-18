@@ -1,0 +1,24 @@
+{
+  "categorias": ["Salados", "Dulce", "Saludable", "Bebidas", "Pasteles", "Bocadillos", "Carnes", "Vegano"],
+  "receitas": [
+    {
+      "id": "1",
+      "nome": "Payagua Mascada",
+      "descricao": "Un bocadillo muy rico.",
+      "imagem": "https://comedera.com/wp-content/uploads/sites/9/2023/08/shutterstock_1799358742.jpg",
+      "video": "https://www.youtube.com/embed/877EW-P5xJA",
+      "categoria": "Bocadillos",
+      "modoDePreparo": "Comenzando la receta, ponemos la yuca en agua hirviendo a cocer. Mientras, ponemos en un recipiente aceite, cebolla y ajo y los rehogamos, para darle mayor sabor y profundidad al plato. Lavamos también la carne y la añadimos a la sartén con el ajo y la cebolla salteados. Removemos y luego añadimos la sal y el condimento que contiene cebollino, hojas de laurel, comino y perejil juntos. Volvemos a remover hasta que todos los ingredientes queden bien mezclados. Posteriormente comprobamos la consistencia de la yuca y la retiramos del fuego, colocándola en un recipiente. Le quitamos la “pelusa” y luego lo trituramos con un tenedor. Luego de amasar colocamos la carne molida en el recipiente y mezclamos bien con la yuca. Con la masa lista, comenzamos a coger trozos pequeños y formar bolas de masa circulares, luego las rebozamos con una fina capa de harina de trigo. Después de tener formadas las empanadillas, metemos una parte en el horno y otra en la freidora. Después de 45 minutos aproximadamente retiramos ambos y este fue el resultado… Así que eso fue todo, ¡esperamos que les haya gustado! ¡Buen provecho!",
+      "ingredientes": ["500g de Yuca", "Una pizca de pimiento", "1/2 Cebolla", "1 Cebollino Picado", " 1/4 de Comino", "1 hoja de Laurel", "1 Manojo de Perejil Picado", "1 diente de ajo fileteado", "250g de carne molida"]
+    },
+    {
+      "id": "2",
+      "nome": "Koserevá",
+      "descricao": "Un dulce tradicional.",
+      "imagem": "https://tipicas.com.br/wp-content/uploads/2022/11/comida-tipica-do-paraguai07.jpg",
+      "categoria": "Dulce",
+      "modoDePreparo": "Para preparar las naranjas en almíbar, primero pélalas finamente y córtalas por la mitad. Colócalas en agua fría durante un día, cambiando el agua cada tres horas. Al día siguiente, pon las frutas en una cacerola con agua fría y hierve por unos minutos. Luego, retíralas del fuego y enjuágalas con agua fría. Repite el proceso de hervir y enjuagar una vez más. Después, coloca las frutas en una cacerola de aluminio con agua fría, agrega los 2 kilos de azúcar y cocina a fuego lento durante 90 minutos. Añade el resto del azúcar y deja hervir por 2 horas más, hasta que el almíbar alcance el punto de keserevá.",
+      "ingredientes": ["3 docenas naranja agrias", "2kg azúcar", "miel de caña (1 ½)", "agua c/n"]
+    }
+  ]
+}
