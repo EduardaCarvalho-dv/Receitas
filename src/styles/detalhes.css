@@ -1,0 +1,34 @@
+.receita-details-container {
+    max-width: 800px; 
+    margin: auto;
+    padding: 20px;
+}
+
+.receita-details-container h1 {
+    font-size: 2.5em; 
+    margin-bottom: 20px; 
+}
+
+.card img {
+    width: 100%; 
+    height: auto; 
+}
+
+.modo-preparo {
+    text-align: justify; 
+}
+
+@media (max-width: 768px) {
+    .receita-details-container h1 {
+        font-size: 2em; 
+    }
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-warning {
+    margin-left: 10px; 
+}

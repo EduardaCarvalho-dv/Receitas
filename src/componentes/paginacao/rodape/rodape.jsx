@@ -17,7 +17,7 @@ const Rodape = () => {
           </div>
           <div className="contatos">
             <p>
-              <span>Contato: </span> (84) 99999-9999&nbsp; <FaWhatsapp />
+              <span>Contacto: </span> (84) 99999-9999&nbsp; <FaWhatsapp />
             </p>
             <p>
               <span>Email: </span>
@@ -35,7 +35,7 @@ const Rodape = () => {
               &nbsp;&nbsp;&nbsp;
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/receitasmundoafora_oficial?igsh=MXp0a2I5MzV2Nnlm"
               aria-label="Enter instagram"
               target="_blank"
               className="footerLinks"
@@ -56,8 +56,8 @@ const Rodape = () => {
         </div>
         <Row className="copyright">
           <Col>
-            &copy; {new Date().getFullYear()} Mundo Afora. Todos os
-            direitos reservados
+            &copy; {new Date().getFullYear()} Mundo alrededor. Todo
+            derechos reservados
           </Col>
         </Row>
       </Container>

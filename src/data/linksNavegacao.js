@@ -7,17 +7,12 @@ export const navLinks = [
   {
     id: 2,
     path: "/receitas",
-    text: "Receitas",
+    text: "Recetas",
   },
   {
     id: 3,
     path: "/sobre",
-    text: "Receitas Favoritas",
-  },
-  {
-    id: 4,
-    path: "/sobre",
-    text: "Sobre",
+    text: "Acerca",
   },
 ];
 

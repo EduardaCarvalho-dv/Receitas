@@ -1,4 +1,8 @@
-import img1 from "../assets/torta.jpeg";
+import img1 from "../assets/dia-da-cruz-festas-tipicas-paraguai.jpg";
+import img2 from "../assets/san-pedro-san-pablo-festas-tipicas-paraguai.jpg";
+import img3 from "../assets/dia-de-san-blas-festas-tipicas-paraguai.jpg";
+import img4 from "../assets/festa-junina.jpg";
+import img5 from "../assets/download.jpeg";
 
 import alta1 from "../assets/galinhada.jpg";
 import alta2 from "../assets/sopao.jpg";
@@ -7,37 +11,27 @@ export const celebracoes = [
   {
     id: 1,
     img: img1,
-    title: "lorem ipsum",
+    title: "Kurusú Ara",
   },
   {
     id: 2,
-    img: img1,
-    title: "macarrão ipsum",
+    img: img2,
+    title: "San Pedro y San Pablo",
   },
   {
     id: 3,
-    img: img1,
-    title: "lorem ipsum",
+    img: img3,
+    title: "San Blas",
   },
   {
     id: 4,
-    img: img1,
-    title: "lorem ipsum",
+    img: img4,
+    title: "San Juan",
   },
   {
     id: 5,
-    img: img1,
-    title: "pudim ipsum",
-  },
-  {
-    id: 6,
-    img: img1,
-    title: "lorem ipsum",
-  },
-  {
-    id: 7,
-    img: img1,
-    title: "cuscuz ipsum",
+    img: img5,
+    title: "Carnaval Encarnacion",
   },
 ];
 

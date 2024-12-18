@@ -1,5 +1,5 @@
-.receita-hero {
-    background-image: url("https://via.placeholder.com/1200x400");
+.receita-heros {
+    background-image: url("https://viajeleve.net/v23/wp-content/uploads/2023/12/Mate-Quente-Paraguai.jpg");
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -11,4 +11,10 @@
     margin: 20px 0;
     text-align: center;
   }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
   

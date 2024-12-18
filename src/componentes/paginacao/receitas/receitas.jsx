@@ -4,11 +4,12 @@ import AddReceita from "./addReceita";
 import "../../../styles/receitas.css";
 import { fetchAndMergeReceitas } from "../../../utils/syncReceitas";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Receitas = () => {
   const [receitas, setReceitas] = useState([]);
   const [categorias, setCategorias] = useState([]);
-  const [categoriaSelecionada, setCategoriaSelecionada] = useState("Todas");
+  const [categoriaSelecionada, setCategoriaSelecionada] = useState("Todo");
   const [showModal, setShowModal] = useState(false);
 
   const [novaReceita, setNovaReceita] = useState({
@@ -27,7 +28,7 @@ const Receitas = () => {
         setReceitas(receitasUnificadas);
 
         const response = await axios.get("/db.json");
-        setCategorias(["Todas", ...response.data.categorias]);
+        setCategorias(["Todo", ...response.data.categorias]);
       } catch (error) {
         console.error("Erro ao carregar dados:", error);
       }
@@ -48,7 +49,9 @@ const Receitas = () => {
       !novaReceita.categoria ||
       novaReceita.ingredientes.some((ingrediente) => !ingrediente.trim())
     ) {
-      alert("Todos os campos são obrigatórios e deve haver pelo menos um ingrediente.");
+      alert(
+        "Todos os campos são obrigatórios e deve haver pelo menos um ingrediente."
+      );
       return;
     }
 
@@ -73,26 +76,30 @@ const Receitas = () => {
 
   const removerReceita = (id) => {
     const receitasSalvas = JSON.parse(localStorage.getItem("receitas")) || [];
-    const novasReceitas = receitasSalvas.filter((receita) => receita.id !== id);
-
-    localStorage.setItem("receitas", JSON.stringify(novasReceitas));
-
-    const receitasAtualizadas = receitas.filter((receita) => receita.id !== id);
-    setReceitas(receitasAtualizadas);
+    
+    if (receitasSalvas.some((receita) => receita.id === id)) {
+      const novasReceitas = receitasSalvas.filter((receita) => receita.id !== id);
+      localStorage.setItem("receitas", JSON.stringify(novasReceitas));
+      
+      const receitasAtualizadas = receitas.filter((receita) => receita.id !== id);
+      setReceitas(receitasAtualizadas);
+    }
   };
 
   const receitasFiltradas =
-    categoriaSelecionada === "Todas"
+    categoriaSelecionada === "Todo"
       ? receitas
-      : receitas.filter((receita) => receita.categoria === categoriaSelecionada);
+      : receitas.filter(
+          (receita) => receita.categoria === categoriaSelecionada
+        );
 
   return (
     <Container>
-      <div className="receita-hero">
-        <h1 className="text-white">Receitas</h1>
-        <p className="text-white">Descubra as delicias paraguaias!</p>
+      <div className="receita-heros">
+        <h1 className="text-white">Recetas</h1>
+        <p className="text-white">¡Descubre las delicias paraguayas!</p>
         <Button variant="light" onClick={handleShowModal}>
-          + Adicionar Receita
+          + Agregar Receta
         </Button>
       </div>
 
@@ -117,13 +124,24 @@ const Receitas = () => {
               <Card.Body>
                 <Card.Title>{receita.nome}</Card.Title>
                 <Card.Text>{receita.descricao}</Card.Text>
-                <Button
-                  variant="danger"
-                  onClick={() => removerReceita(receita.id)}
-                  disabled={receita.id < 1000} 
-                >
-                  Remover
-                </Button>
+                <div className="button-container">
+                  {JSON.parse(localStorage.getItem("receitas"))?.some(r => r.id === receita.id) && (
+                    <Button
+                      variant="danger"
+                      onClick={() => removerReceita(receita.id)}
+                    >
+                      Eliminar
+                    </Button>
+                  )}
+                  <Button
+                    variant="dark"
+                    as={Link} 
+                    to={`/receitas/${receita.id}`} 
+                    aria-label={`Ver receita ${receita.nome}`}
+                  >
+                    Ver Receta
+                  </Button>
+                </div>
               </Card.Body>
             </Card>
           </Col>

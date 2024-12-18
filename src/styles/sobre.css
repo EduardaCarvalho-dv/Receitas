@@ -1,6 +1,56 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: 0;
-    box-sizing: border-box; 
+.sobre-container {
+    text-align: center;
+}
+
+.parallax {
+    height: 740px; 
+    background-attachment: fixed; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+.overlay {
+    height: 100%;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    color: white; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+}
+
+.content {
+    padding: 20px;
+}
+
+.content h2 {
+    margin-top: 20px;
+}
+
+.content p {
+    margin: 10px 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
+    margin-top: 20px; 
+}
+
+.download-link,
+.view-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; 
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.download-link:hover,
+.view-link:hover {
+    background-color: #0056b3; 
 }

@@ -5,31 +5,33 @@ import Rodape from "./componentes/paginacao/rodape/rodape.jsx";
 import Sobre from "./componentes/paginacao/sobre/sobre.jsx";
 import Buscar from "./componentes/paginacao/buscar/buscar.jsx";
 import Receita from "./componentes/paginacao/receitas/receitas.jsx";
+import Detalhes from "./componentes/paginacao/detalhes/detalhes.jsx";
 
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-// import { Routes, Route, BrowserRouter, useLocation } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
+
 function App() {
   return (
     <>
-       <div className="App">
-      <BrowserRouter>
-        <Nav />
-        <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/sobre" element={<Sobre />} />
-          <Route path="/receitas" element={<Receita />} />
-          <Route path="/buscar" element={<Buscar />} />
-        </Routes>
-        </main>
-        <Rodape />
-      </BrowserRouter>
-    </div>
+      <div className="App">
+        <BrowserRouter>
+          <Nav />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/sobre" element={<Sobre />} />
+              <Route path="/receitas" element={<Receita />} />
+              <Route path="/buscar" element={<Buscar />} />
+              <Route path="/receitas/:id" element={<Detalhes />} /> 
+            </Routes>
+          </main>
+          <Rodape />
+        </BrowserRouter>
+      </div>
     </>
   );
 }
- export default App; 
+export default App;
