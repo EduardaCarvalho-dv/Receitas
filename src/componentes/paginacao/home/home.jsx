@@ -72,7 +72,7 @@ const Home = () => {
       <div className="home">
         <div className="conteudoHome">
           <div className="emAlta">
-            <h2>Receitas em Alta</h2>
+            <h2>Recetas de Tendencia</h2>
 
             <Slider {...configura}>
               {receitasEmAlta.map((item) => (
@@ -82,7 +82,7 @@ const Home = () => {
                       <h3 className="receitaTitulo">{item.nome}</h3>
                       <p className="receitaDescricao">{item.descricao}</p>
                       <div className="botaoReceita">
-                        <button className="btnReceita">SAIBA MAIS</button>
+                        <button className="btnReceita">DESCUBRE MÁS</button>
                       </div>
                     </div>
                     <div className="receitaImagem">
@@ -95,7 +95,7 @@ const Home = () => {
           </div>
 
           <div className="celebracoes">
-            <h2>Celebrações</h2>
+            <h2>Celebraciones</h2>
 
             <Slider {...conf}>
               {celebracoes.map((card) => (

@@ -48,7 +48,9 @@ const Receitas = () => {
       !novaReceita.categoria ||
       novaReceita.ingredientes.some((ingrediente) => !ingrediente.trim())
     ) {
-      alert("Todos os campos são obrigatórios e deve haver pelo menos um ingrediente.");
+      alert(
+        "Todos os campos são obrigatórios e deve haver pelo menos um ingrediente."
+      );
       return;
     }
 
@@ -84,15 +86,21 @@ const Receitas = () => {
   const receitasFiltradas =
     categoriaSelecionada === "Todas"
       ? receitas
-      : receitas.filter((receita) => receita.categoria === categoriaSelecionada);
+      : receitas.filter(
+          (receita) => receita.categoria === categoriaSelecionada
+        );
+
+  const handleViewReceita = (id) => {
+    console.log(`Ver receita com ID: ${id}`);
+  };
 
   return (
     <Container>
       <div className="receita-hero">
-        <h1 className="text-white">Receitas</h1>
-        <p className="text-white">Descubra as delicias paraguaias!</p>
+        <h1 className="text-white">Recetas</h1>
+        <p className="text-white">¡Descubre las delicias paraguayas!</p>
         <Button variant="light" onClick={handleShowModal}>
-          + Adicionar Receita
+          + Agregar Receta
         </Button>
       </div>
 
@@ -117,13 +125,21 @@ const Receitas = () => {
               <Card.Body>
                 <Card.Title>{receita.nome}</Card.Title>
                 <Card.Text>{receita.descricao}</Card.Text>
-                <Button
-                  variant="danger"
-                  onClick={() => removerReceita(receita.id)}
-                  disabled={receita.id < 1000} 
-                >
-                  Remover
-                </Button>
+                <div className="button-container">
+                  <Button
+                    variant="danger"
+                    onClick={() => removerReceita(receita.id)}
+                    disabled={receita.id < 1000}
+                  >
+                    Eliminar
+                  </Button>
+                  <Button
+                    variant="dark"
+                    onClick={() => handleViewReceita(receita.id)}
+                  >
+                    Ver Receta
+                  </Button>
+                </div>
               </Card.Body>
             </Card>
           </Col>

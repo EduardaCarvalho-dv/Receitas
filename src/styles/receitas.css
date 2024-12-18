@@ -11,4 +11,10 @@
     margin: 20px 0;
     text-align: center;
   }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
   

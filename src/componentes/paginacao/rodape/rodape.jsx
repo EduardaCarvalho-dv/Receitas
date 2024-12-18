@@ -35,7 +35,7 @@ const Rodape = () => {
               &nbsp;&nbsp;&nbsp;
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/receitasmundoafora_oficial?igsh=MXp0a2I5MzV2Nnlm"
               aria-label="Enter instagram"
               target="_blank"
               className="footerLinks"

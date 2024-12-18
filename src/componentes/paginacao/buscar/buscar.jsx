@@ -33,17 +33,14 @@ const Buscar = () => {
     <Container>
       <div className="hero-section">
         <div className="hero-overlay">
-          <h1>Encontre suas receitas</h1>
+          <h1>Encuentra tus recetas</h1>
           <Form className="searchbar">
             <Form.Control
               type="text"
-              placeholder="O que você está buscando?"
+              placeholder="¿Qué estás buscando?"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <Button variant="dark" className="ms-2">
-              Buscar
-            </Button>
           </Form>
         </div>
       </div>
@@ -61,7 +58,7 @@ const Buscar = () => {
                 <Card.Body>
                   <Card.Title>{receita.nome}</Card.Title>
                   <Card.Text>{receita.descricao}</Card.Text>
-                  <Button variant="dark">Ver Receita</Button>
+                  <Button variant="dark">Ver Receta</Button>
                 </Card.Body>
               </Card>
             </Col>
@@ -70,7 +67,7 @@ const Buscar = () => {
       </div>
 
       <div className="my-5">
-        <h3>Sugestões para você</h3>
+        <h3>Sugerencias para ti</h3>
         <Row>
           {sugestoes.map((receita) => (
             <Col key={receita.id} md={4}>
@@ -82,7 +79,8 @@ const Buscar = () => {
                 />
                 <Card.Body>
                   <Card.Title>{receita.nome}</Card.Title>
-                  <Button variant="outline-dark">Ver Mais</Button>
+                  <Button variant="outline-dark">
+                  Ver más</Button>
                 </Card.Body>
               </Card>
             </Col>
