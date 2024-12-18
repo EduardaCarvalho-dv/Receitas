@@ -7,7 +7,7 @@ import Buscar from "./componentes/paginacao/buscar/buscar.jsx";
 import Receita from "./componentes/paginacao/receitas/receitas.jsx";
 import Detalhes from "./componentes/paginacao/detalhes/detalhes.jsx";
 
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <BrowserRouter>
+        <HashRouter>
           <Nav />
           <main>
             <Routes>
@@ -29,7 +29,7 @@ function App() {
             </Routes>
           </main>
           <Rodape />
-        </BrowserRouter>
+        </HashRouter>
       </div>
     </>
   );

@@ -1,7 +1,7 @@
 import { navLinks } from "../../../data/linksNavegacao";
 
 import "../../../styles/nav.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import logo from "/logoR.png";
 
@@ -30,7 +30,7 @@ const BarraNavegacao = () => {
               {navLinks.map((item) => {
                 return (
                   <div className="navLink" key={item.id}>
-                    <NavLink href={item.path}>{item.text}</NavLink>
+                    <NavLink to={item.path} as={Link}>{item.text}</NavLink>
                   </div>
                 );
               })}
